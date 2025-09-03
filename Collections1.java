@@ -2,7 +2,8 @@ import java.util.*;
 
 public class Collections1{
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(Arrays.asList(5, 2, 8, 3, 9));
+        ArrayList<Integer> numbers = new ArrayList<>(Arrays.asList(5, 2, 8, 3, 9));
+        List<Integer> numbers2 = new ArrayList<>();
 
         // 1️⃣ sort
         Collections.sort(numbers);
@@ -27,6 +28,13 @@ public class Collections1{
         // 6️⃣ swap elements
         Collections.swap(numbers, 0, 2);
         System.out.println("After swap: " + numbers);
+        ArrayList<String> newc1 = (ArrayList<String>)numbers.clone();//only for ArrayList<Integer/String>
+                                                                     //not for List<Integer>
+          System.out.println("Cloned array list: " + newc1);
+        //7.copy
+        Collections.copy(numbers, numbers2);//overwrites but if the list is 
+                                           //empty in which we have to copy we get error.
+        System.out.println(numbers2);
     }
 }
 
