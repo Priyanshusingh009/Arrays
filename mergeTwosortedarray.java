@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class mergeTwosortedarray { 
     public static void main(String[] args) {
-        int[] nums1={1,2,3};
-        int[] nums2={4,5,0};
+        int[] nums1={1,2,3,0,0,0};
+        int[] nums2={2,5,6};
         int m=nums1.length;
         int n=nums2.length;
         int[] result=new int[m+n];
@@ -16,7 +16,21 @@ public class mergeTwosortedarray {
             i++;
         }
         Arrays.sort(result);
+        //we have to ignore zeroes
+        int index=0;
+        for(int k=0;k<result.length;k++){
+            if (result[k] != 0) {
+                result[index] = result[k];
+                index++;
+            }
+        }
+        // Step 2: Fill the rest with zeros
+        while (index < result.length) {
+            result[index] = 0;
+            index++;
+        }
         System.out.println(Arrays.toString(result));
+
     }
     
 }
