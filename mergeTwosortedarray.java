@@ -16,7 +16,7 @@ public class mergeTwosortedarray {
             i++;
         }
         Arrays.sort(result);
-        //we have to ignore zeroes
+        //we have to ignore zeroesk
         int index=0;
         for(int k=0;k<result.length;k++){
             if (result[k] != 0) {
